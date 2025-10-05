@@ -44,37 +44,10 @@ These scripts demonstrate practical skills in automation, monitoring, and basic 
 
 ---
 
-## 🚀 Future Improvements
-
-- **Archiving logs instead of deleting**  
-  Instead of permanently deleting logs, an enhancement could compress and archive them first for safer storage.  
-
-  Example implementation:  
+### 4. `network_diagnostics.py`
+- Pings a list of hosts to check network reachability.
+- Displays latency (ping time) for reachable hosts.
+- Logs all results with timestamps in `network_diagnostics.log`.
+- Run with:
   ```bash
-  #!/bin/bash
-  # cleanup_logs.sh - Archive and clean log files older than 7 days in /var/log
-
-  LOG_DIR="/var/log"
-  DAYS=7
-  ARCHIVE="old_logs_$(date +%Y%m%d).tar.gz"
-
-  echo "🗄️ Archiving logs older than $DAYS days from $LOG_DIR into $ARCHIVE..."
-
-  find "$LOG_DIR" -name "*.log" -type f -mtime +$DAYS -print0 | tar -czvf "$ARCHIVE" --null -T -
-
-  echo "🧹 Deleting archived logs..."
-  find "$LOG_DIR" -name "*.log" -type f -mtime +$DAYS -delete
-
-  echo "✅ Cleanup and archive complete. Logs saved in $ARCHIVE."
-  ```
-
----
-
-## 📖 Purpose
-
-This repository serves as a learning and showcase project to build confidence with:  
-- Writing and running Python scripts for monitoring tasks  
-- Automating system maintenance with Bash  
-- Practicing version control with Git and GitHub  
-
-These are small but practical projects that demonstrate technical growth and readiness to take on larger DevOps or automation challenges.
+  python network_diagnostics.py
