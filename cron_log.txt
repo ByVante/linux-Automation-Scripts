@@ -1,3 +1,0 @@
-CPU Usage: 3.1%
-Memory Usage: 74.3%
-Disk Usage: 45.8%
