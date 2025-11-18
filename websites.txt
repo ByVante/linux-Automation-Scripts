@@ -1,0 +1,4 @@
+https://www.google.com
+https://www.amazon.com
+https://www.github.com
+https://www.thiswebsitedoesnotexist12345.com
